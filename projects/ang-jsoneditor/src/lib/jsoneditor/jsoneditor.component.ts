@@ -50,13 +50,10 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
   jsonChange: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
-    console.log('blaa');
   }
 
 
   ngOnInit() {
-    console.log('hii');
-
     let optionsBefore = this.options;
     if (!this.optionsChanged && this.editor) {
       optionsBefore = this.editor.options;
@@ -232,7 +229,7 @@ export class JsonEditorComponent implements ControlValueAccessor, OnInit, OnDest
   }
 
   public destroy() {
-    this.editor.destroy();
+    this.editor?.destroy();
   }
 
   public getEditor(){
